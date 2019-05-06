@@ -6,6 +6,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main__bottom_nav_">Main_BottomNav_Activity</string>
 
+    <string name="wifi_network">Wifi</string>
+    <string name="location_network">Location</string>
+    <string name="morning_network">AM</string>
+    <string name="evening_network">PM</string>
+    <string name="admin_network">Admin</string>
 
     <string name="simple_circle_button_example">Simple Circle Button Example</string>
     <string name="text_inside_circle_button_example">Text Inside Circle Button Example</string>
@@ -58,6 +63,7 @@
     <string name="text_ham_button_sub_text_normal">Ham Button Sub Text(Normal)</string>
     <string name="text_ham_button_sub_text_highlighted">Ham Button Sub Text(Highlighted)</string>
     <string name="text_ham_button_sub_text_unable">Ham Button Sub Text(Unable)</string>
+    <string name="title_activity_new_fingerprintlogin_btmnav">new_fingerprintlogin_btmnav</string>
 
 
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_wifi"
+        android:icon="@drawable/wifi_icon_selector"
+        android:title="Wifi" />
+
+    <item
+        android:id="@+id/navigation_location"
+        android:icon="@drawable/location_icon_selector"
+        android:title="Location" />
+
+    <item
+        android:id="@+id/navigation_morning_constraint"
+        android:icon="@drawable/morning_icon_selector"
+        android:title="AM" />
+    <item
+        android:id="@+id/navigation_evening_constraint"
+        android:icon="@drawable/evening_icon_selector"
+        android:title="PM" />
+
+
+    <item
+        android:id="@+id/navigation_admin"
+        android:icon="@drawable/admin_icon_selector"
+        android:title="Admin" />
+
+</menu>

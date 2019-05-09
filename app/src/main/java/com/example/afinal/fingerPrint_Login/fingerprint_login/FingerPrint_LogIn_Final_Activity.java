@@ -8,6 +8,8 @@ import android.content.Context;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 
+import com.example.afinal.fingerPrint_Login.final_fingerprint_btm_nav.Final_fingerprint_bottom_nav;
+import com.example.afinal.fingerPrint_Login.new_fingerprint_btmnavview_login.New_fingerprintlogin_btmnav;
 import com.example.afinal.fingerPrint_Login.oop.OnServerTime_Interface;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,6 +29,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,7 +55,16 @@ import java.util.Observer;
 
 public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implements FingerPrintFinal_View_Interface, View.OnClickListener, Observer, OnServerTime_Interface {
 
+
+    ///////
+
+    private Button buttonTESTSTS;
+
+
+    ////////
     public static int userCount;
+
+
 
     private FloatingActionButton floatButtonGetAction;
     private TextView textView;
@@ -156,6 +168,17 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finger_print__log_in__final_);
+
+        buttonTESTSTS = findViewById(R.id.bottonTEST);
+
+        buttonTESTSTS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(FingerPrint_LogIn_Final_Activity.this, Final_fingerprint_bottom_nav.class);
+                startActivity(intent);
+            }
+        });
 
         lastSSIDrecorded = "";
         timeFragmentBoolean =false;

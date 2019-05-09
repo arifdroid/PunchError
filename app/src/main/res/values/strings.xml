@@ -64,6 +64,7 @@
     <string name="text_ham_button_sub_text_highlighted">Ham Button Sub Text(Highlighted)</string>
     <string name="text_ham_button_sub_text_unable">Ham Button Sub Text(Unable)</string>
     <string name="title_activity_new_fingerprintlogin_btmnav">new_fingerprintlogin_btmnav</string>
+    <string name="title_activity_final_fingerprint_bottom_nav">final_fingerprint_bottom_nav</string>
 
 
 </resources>

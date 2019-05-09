@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_bg"
+    tools:context=".fingerPrint_Login.final_fingerprint_btm_nav.Final_fingerprint_bottom_nav">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="140dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="24dp"
+        android:elevation="3dp"
+        android:src="@drawable/profile_image_sample"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#5CFFFFFF"
+        app:cardElevation="1dp"
+        app:cardMaxElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout13"
+        android:layout_width="0dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="6dp"
+
+            app:elevation="0dp"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+
+
+            android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+            android:clickable="true"
+            android:src="@drawable/plus_main_button_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="72dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinal_bar1"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayoutFinal_bar2"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinal_bar4"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayoutFinal_bar5"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutFinal_bar3"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinal_bar5"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutFinal_bar4"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinal_bar3"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayoutFinal_bar4"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutFinal_bar2"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinal_bar2"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayoutFinal_bar3"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutFinal_bar1"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout19"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar1"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout20"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="gone">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout25"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar4"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout24"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout26"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout26"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar4"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout25"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout27"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout27"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar3"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout26"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout23"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout24"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar5"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout28"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout25"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout28"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout24"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout23"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar3"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout27"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout22"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout22"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar2"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout23"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout21"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout20"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar1"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout21"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout19"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout21"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar2"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout22"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout20"
+            tools:visibility="invisible">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewFinal_Evening"
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#5CFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayoutFinal_bar4"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout26"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white_blue_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewFinal_admin_now"
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#5CFFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout24"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white_blue_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageViewFinal_admin_now"
+            android:layout_width="65dp"
+            android:layout_height="90dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:padding="10dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout24"
+            app:layout_constraintEnd_toStartOf="@+id/cardViewFinal_admin_now"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout24"
+            app:srcCompat="@drawable/admin_icon_white"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewFinal_evening"
+            android:layout_width="65dp"
+            android:layout_height="90dp"
+            android:background="@drawable/gradient_pink_orange"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout26"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout26"
+            app:srcCompat="@drawable/pm_icon_white"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

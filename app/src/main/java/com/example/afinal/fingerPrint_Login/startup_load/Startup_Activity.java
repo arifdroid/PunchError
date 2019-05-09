@@ -42,8 +42,8 @@ public class Startup_Activity extends AppCompatActivity implements Observer {
 
         presenter = new Presenter_Startup();
 
-        animationDrawable.setEnterFadeDuration(1200);
-        animationDrawable.setExitFadeDuration(2500);
+        animationDrawable.setEnterFadeDuration(100);
+        animationDrawable.setExitFadeDuration(100);
         animationDrawable.start();
 
 
@@ -87,7 +87,7 @@ public class Startup_Activity extends AppCompatActivity implements Observer {
 
 
             }
-        },0,1200);
+        },0,600);
 
 
     }

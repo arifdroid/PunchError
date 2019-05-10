@@ -5,13 +5,14 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 
-import com.example.afinal.fingerPrint_Login.final_fingerprint_btm_nav.Final_fingerprint_bottom_nav;
-import com.example.afinal.fingerPrint_Login.new_fingerprint_btmnavview_login.New_fingerprintlogin_btmnav;
 import com.example.afinal.fingerPrint_Login.oop.OnServerTime_Interface;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.fragment.app.FragmentManager;
@@ -28,6 +29,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -164,21 +166,188 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
     public static boolean timeFragmentBoolean;
     private String lastSSIDrecorded;
 
+    //bottom navigation listener
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+
+                case R.id.navigation_wifi:
+
+                    constraintLayout_bar_admin.setVisibility(View.INVISIBLE);
+                    cardViewAdmin.setVisibility(View.INVISIBLE);
+                    imageViewAdmin.setVisibility(View.INVISIBLE);
+
+                    constraintLayout_bar_evening.setVisibility(View.INVISIBLE);
+                    cardViewEvening.setVisibility(View.INVISIBLE);
+                    imageViewEvening.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_morning.setVisibility(View.INVISIBLE);
+                    cardViewMorning.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_location.setVisibility(View.INVISIBLE);
+                    cardViewLocation.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_wifi.setVisibility(View.VISIBLE);
+                    cardViewWifi.setVisibility(View.VISIBLE);
+
+
+
+
+                    break;
+                case R.id.navigation_location:
+
+                    constraintLayout_bar_admin.setVisibility(View.INVISIBLE);
+                    cardViewAdmin.setVisibility(View.INVISIBLE);
+                    imageViewAdmin.setVisibility(View.INVISIBLE);
+
+                    constraintLayout_bar_evening.setVisibility(View.INVISIBLE);
+                    cardViewEvening.setVisibility(View.INVISIBLE);
+                    imageViewEvening.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_morning.setVisibility(View.INVISIBLE);
+                    cardViewMorning.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_location.setVisibility(View.VISIBLE);
+                    cardViewLocation.setVisibility(View.VISIBLE);
+
+
+                    constraintLayout_bar_wifi.setVisibility(View.INVISIBLE);
+                    cardViewWifi.setVisibility(View.INVISIBLE);
+
+
+
+
+                    break;
+                case R.id.navigation_morning_constraint:
+
+                    constraintLayout_bar_admin.setVisibility(View.INVISIBLE);
+                    cardViewAdmin.setVisibility(View.INVISIBLE);
+                    imageViewAdmin.setVisibility(View.INVISIBLE);
+
+                    constraintLayout_bar_evening.setVisibility(View.INVISIBLE);
+                    cardViewEvening.setVisibility(View.INVISIBLE);
+                    imageViewEvening.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_morning.setVisibility(View.VISIBLE);
+                    cardViewMorning.setVisibility(View.VISIBLE);
+
+
+                    constraintLayout_bar_location.setVisibility(View.INVISIBLE);
+                    cardViewLocation.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_wifi.setVisibility(View.INVISIBLE);
+                    cardViewWifi.setVisibility(View.INVISIBLE);
+
+
+                    break;
+                case R.id.navigation_evening_constraint:
+//
+                    constraintLayout_bar_admin.setVisibility(View.INVISIBLE);
+                    cardViewAdmin.setVisibility(View.INVISIBLE);
+                    imageViewAdmin.setVisibility(View.INVISIBLE);
+
+                    constraintLayout_bar_evening.setVisibility(View.VISIBLE);
+                    cardViewEvening.setVisibility(View.VISIBLE);
+                    imageViewEvening.setVisibility(View.VISIBLE);
+
+
+                    constraintLayout_bar_morning.setVisibility(View.INVISIBLE);
+                    cardViewMorning.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_location.setVisibility(View.INVISIBLE);
+                    cardViewLocation.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_wifi.setVisibility(View.INVISIBLE);
+                    cardViewWifi.setVisibility(View.INVISIBLE);
+
+
+                    break;
+                case R.id.navigation_admin:
+
+                    constraintLayout_bar_admin.setVisibility(View.VISIBLE);
+                    cardViewAdmin.setVisibility(View.VISIBLE);
+                    imageViewAdmin.setVisibility(View.VISIBLE);
+
+                    constraintLayout_bar_evening.setVisibility(View.INVISIBLE);
+                    cardViewEvening.setVisibility(View.INVISIBLE);
+                    imageViewEvening.setVisibility(View.INVISIBLE);
+
+                    constraintLayout_bar_morning.setVisibility(View.INVISIBLE);
+                    cardViewMorning.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_location.setVisibility(View.INVISIBLE);
+                    cardViewLocation.setVisibility(View.INVISIBLE);
+
+
+                    constraintLayout_bar_wifi.setVisibility(View.INVISIBLE);
+                    cardViewWifi.setVisibility(View.INVISIBLE);
+
+                    break;
+
+
+            }
+            return true;
+        }
+    };
+
+    //for bottom nav click listener
+    private ImageView imageViewEvening, imageViewAdmin;
+    private CardView cardViewAdmin,cardViewEvening;
+    private ConstraintLayout constraintLayout_bar_admin,constraintLayout_bar_evening, constraintLayout_bar_morning
+            , constraintLayout_bar_location, constraintLayout_bar_wifi;
+    private CardView cardViewWifi, cardViewLocation, cardViewMorning;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finger_print__log_in__final_);
 
-        buttonTESTSTS = findViewById(R.id.bottonTEST);
+        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setItemIconTintList(null);
 
-        buttonTESTSTS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        //bottom nav section
 
-                Intent intent = new Intent(FingerPrint_LogIn_Final_Activity.this, Final_fingerprint_bottom_nav.class);
-                startActivity(intent);
-            }
-        });
+        //evening, admin
+        // imageview
+        imageViewEvening = findViewById(R.id.now_imageView_evening_ID);
+        imageViewAdmin = findViewById(R.id.now_imageView_admin_ID);
+
+//        //cardview
+        cardViewAdmin = findViewById(R.id.now_cardView_admin_ID);
+        cardViewEvening = findViewById(R.id.now_cardView_evening_ID);
+
+        //for morning, location, wifi
+        cardViewWifi = findViewById(R.id.now_cardview_wifi_id);
+        cardViewLocation= findViewById(R.id.now_cardView_location_id);
+        cardViewMorning =  findViewById(R.id.now_cardView_morning_ID);
+//
+//        //bar
+        constraintLayout_bar_admin = findViewById(R.id.now_constraintLayout_bar5);
+        constraintLayout_bar_evening = findViewById(R.id.now_constraintLayout_bar4);
+        constraintLayout_bar_morning = findViewById(R.id.now_constraintLayout_bar3);
+        constraintLayout_bar_location = findViewById(R.id.now_constraintLayout_bar2);
+        constraintLayout_bar_wifi = findViewById(R.id.now_constraintLayout_bar1);
+//
+
+        //
+
 
         lastSSIDrecorded = "";
         timeFragmentBoolean =false;
@@ -188,12 +357,12 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
         lastLocationRecorded="";
 
         countUserverified = 0;
-        textViewFinalData = findViewById(R.id.textViewFINALDATAID);
-        countFinalFlow = 0;
-        textViewFinalData2 = findViewById(R.id.textViewFinalDataID2);
-        countFinalFlow2 = 0;
-
-        textViewDataLocation = findViewById(R.id.textViewFinalDataLocationiD);
+//        textViewFinalData = findViewById(R.id.textViewFINALDATAID);
+//        countFinalFlow = 0;
+//        textViewFinalData2 = findViewById(R.id.textViewFinalDataID2);
+//        countFinalFlow2 = 0;
+//
+//        textViewDataLocation = findViewById(R.id.textViewFinalDataLocationiD);
 
 
         //    userCount =0//;
@@ -214,7 +383,7 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
         globalAdminPhoneHere = null;
         globalAdminNameHere = null;
 
-        presenter = new FingerPrintFinal_Presenter(this, (Activity) FingerPrint_LogIn_Final_Activity.this);
+        presenter = new FingerPrintFinal_Presenter(this, (AppCompatActivity) FingerPrint_LogIn_Final_Activity.this);
         Log.i("checkFinalFlow : ", " 2 oncreate() fingerprint_main_activity, after presenter Constructor()");
 
         presenter.addObserver(this);
@@ -255,9 +424,8 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
 
         floatButtonGetAction.setOnClickListener(this);
 
-        textView = findViewById(R.id.login_final_textViewHereID);
-        imageView = findViewById(R.id.login_final_imageViewID);
-        textView.setText("click button below to log in");
+      //  textView = findViewById(R.id.login_final_textViewHereID);
+      //  textView.setText("click button below to log in");
         backColor = findViewById(R.id.backLayoutColourID);
 
 
@@ -280,14 +448,14 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
 
                 countFinalFlow2++; //this triggered two times,
 
-                textViewFinalData2.setText("backStackChange: " + countFinalFlow2);
+               // textViewFinalData2.setText("backStackChange: " + countFinalFlow2);
 
                 if (nameUser != null) {
 
                     Log.i("checkFinalFlow : ", " 7 backstackFragment() activity, nameUser :" + nameUser + " success");
 
                     if (nameUser != "") {
-                        textView.setText("admin detected, fingerprint checkin now with server..");
+                     //   textView.setText("admin detected, fingerprint checkin now with server..");
 
                         Log.i("checkFinalFlow : ", " 8 backstackFragment() activity, before fingerprint");
                         presenter.checkSupportedDevice();
@@ -298,7 +466,7 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
 
                     Log.i("checkFinalFlow : ", " 9 backFragment(), waiting for fingerprint ");
 
-                    textView.setText("waiting");
+                   // textView.setText("waiting");
                 }
 
                 Log.i("checkFinalFlow : ", " 10 backFragment(), prolem in flow ");
@@ -338,7 +506,7 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
         if (o instanceof FingerPrintFinal_Presenter) {
 
             String s = ((FingerPrintFinal_Presenter) o).getFinalStringResult();
-            textView.setText(s); //textview is null, since fingerprint do not return result, update always running.
+         //   textView.setText(s); //textview is null, since fingerprint do not return result, update always running.
 
             if (s.equals("success verified")) {
 
@@ -600,7 +768,7 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
             counterFlowHere2++;
             Log.i("finalCheckFlowHere", "4, ssid different, location NULL, latitude admin:"
                     + latitudeConstraint+" , user latitude"+ userLatitude);
-            textViewDataLocation.setText("basic flow:"+ counterFlowHere+ " , turn on GPS:"+counterFlowHere2+" , GPS ON:"+ counterFlowHere3);
+          //  textViewDataLocation.setText("basic flow:"+ counterFlowHere+ " , turn on GPS:"+counterFlowHere2+" , GPS ON:"+ counterFlowHere3);
             // Toast.makeText(this,"please turn on GPS",Toast.LENGTH_LONG).show();
             //this is always excuted.
             //ask user to provide location, turn on GPS.
@@ -669,7 +837,7 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
 
             Log.i("wherelocationRegister :","FLOW 10, countVerified:"+countUserverified+" , userLatitude: "+userLatitude);
 
-            textViewDataLocation.setText("basic flow:"+ counterFlowHere+ " , turn on GPS:"+counterFlowHere2+" , GPS ON:"+ counterFlowHere3);
+           // textViewDataLocation.setText("basic flow:"+ counterFlowHere+ " , turn on GPS:"+counterFlowHere2+" , GPS ON:"+ counterFlowHere3);
 
             Log.i("finalCheckFlowHere", "5, ssid different, location CHECK, latitude admin:"
                     + latitudeConstraint+" , user latitude"+ userLatitude);

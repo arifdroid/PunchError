@@ -1,7 +1,6 @@
 package com.example.afinal.fingerPrint_Login.register.register_as_admin_setupProfile;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -12,13 +11,15 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.example.afinal.fingerPrint_Login.PassResult;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
-import androidx.core.app.ActivityCompat;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -142,7 +143,7 @@ public class Presenter_RegAdmin_asAdmin_Profile_Activity extends Observable {
 
             Log.i("checkkLocation", "5");
 
-            EasyPermissions.requestPermissions((Activity) mContext, "Please grant the location permission", REQUEST_LOCATION_PERMISSION, perms);
+            EasyPermissions.requestPermissions((AppCompatActivity) mContext, "Please grant the location permission", REQUEST_LOCATION_PERMISSION, perms);
         }
 
         return;

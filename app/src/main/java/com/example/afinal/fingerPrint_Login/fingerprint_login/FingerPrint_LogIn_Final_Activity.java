@@ -26,6 +26,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -40,9 +41,15 @@ import com.example.afinal.R;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hanks.htextview.base.HTextView;
+import com.hanks.htextview.evaporate.EvaporateTextView;
+import com.yy.mobile.rollingtextview.CharOrder;
+import com.yy.mobile.rollingtextview.RollingTextView;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.Observable;
@@ -311,8 +318,10 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
     private ConstraintLayout constraintLayout_bar_admin,constraintLayout_bar_evening, constraintLayout_bar_morning
             , constraintLayout_bar_location, constraintLayout_bar_wifi;
     private CardView cardViewWifi, cardViewLocation, cardViewMorning;
+    private Handler handler = new Handler();
 
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -347,6 +356,115 @@ public class FingerPrint_LogIn_Final_Activity extends AppCompatActivity implemen
 //
 
         //
+        @SuppressLint("SimpleDateFormat") final DateFormat format2 = new SimpleDateFormat("HH:mm:ss");
+
+        //getting the date today,
+        DateFormat dateOnly = new SimpleDateFormat("yyyy/MM/dd");
+
+        String date = dateOnly.format(new Date());
+
+        String convertMonth = date.substring(5,7);
+
+        String month="";
+
+        if(convertMonth.equals("01")){
+            month="January";
+        }
+
+        else if(convertMonth.equals("02")){
+            month="Febuary";
+        }
+
+        else if(convertMonth.equals("03")){
+            month="March";
+        }
+
+        else if(convertMonth.equals("04")){
+            month="April";
+        }
+
+        else if(convertMonth.equals("05")){
+            month="May";
+        }
+
+        else if(convertMonth.equals("06")){
+            month="June";
+        }
+
+        else if(convertMonth.equals("07")){
+            month="July";
+        }
+
+        else if(convertMonth.equals("08")){
+            month="August";
+        }
+
+        else if(convertMonth.equals("09")){
+            month="September";
+        }
+
+        else if(convertMonth.equals("10")){
+            month="October";
+        }
+
+        else if(convertMonth.equals("11")){
+            month="November";
+        }
+
+
+        else if(convertMonth.equals("12")){
+            month="Disember";
+        }
+
+
+        String today= date.substring(8,10);
+
+
+
+        TextView textViewDate = findViewById(R.id.main_date_textView_id);
+
+        textViewDate.setText(today+" "+ month);
+
+
+
+        final RollingTextView outtest = findViewById(R.id.main_seconds_rollingTextView);
+
+        outtest.setAnimationDuration(300);
+        outtest.setLetterSpacingExtra(10);
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+
+                String ss = format2.format(new Date()).substring(6,8);
+
+                outtest.setText(ss);
+                handler.postDelayed(this, 1000L);
+            }
+        });
+
+
+        final RollingTextView hourtext = findViewById(R.id.textView_rolling_hour);
+
+        hourtext.setAnimationDuration(300);
+        hourtext.setLetterSpacingExtra(10);
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+
+                String ss = format2.format(new Date()).substring(0,5);
+
+                hourtext.setText(ss);
+                handler.postDelayed(this, 1000L);
+            }
+        });
+
+
+
+
+
+        // hTextView.setAutoSizeTextTypeWithDefaults(1);
 
 
         lastSSIDrecorded = "";
